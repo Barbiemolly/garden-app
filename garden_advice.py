@@ -31,5 +31,6 @@ def get_gardening_tip(month):
 
 
 if __name__ == "__main__":
+    # Example usage: print gardening tip for a specified month
     current_month = "June"
     print(get_gardening_tip(current_month))
