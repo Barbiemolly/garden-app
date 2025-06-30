@@ -2,10 +2,34 @@
 # TODO: Replace hardcoded values with a data dictionary
 # TODO: Add docstrings for all functions
 
-month = "June"
-if month == "June":
-    print("Protect your plants from frost.")
-elif month == "December":
-    print("Water your plants early in the morning.")
-else:
-    print("Check your local gardening calendar.")
+def get_gardening_tip(month):
+    """
+    Return gardening advice based on the provided month.
+
+    Args:
+        month (str): The name of the month (e.g., "June", "December").
+
+    Returns:
+        str: A relevant gardening tip for the month, or a default message if not found.
+    """
+    tips = {
+        "January": "Plan your spring garden and order seeds.",
+        "February": "Start seedlings indoors for early crops.",
+        "March": "Prepare garden beds and prune shrubs.",
+        "April": "Plant cool-season vegetables.",
+        "May": "Start planting warm-season crops.",
+        "June": "Protect your plants from frost.",
+        "July": "Mulch to retain soil moisture.",
+        "August": "Harvest summer crops and plant fall vegetables.",
+        "September": "Begin fall clean-up and plant perennials.",
+        "October": "Protect tender plants from frost.",
+        "November": "Compost fallen leaves.",
+        "December": "Water your plants early in the morning.",
+    }
+
+    return tips.get(month, "Check your local gardening calendar.")
+
+
+if __name__ == "__main__":
+    current_month = "June"
+    print(get_gardening_tip(current_month))
